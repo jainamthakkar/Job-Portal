@@ -9,39 +9,42 @@
 </head>
 
 <style>
-
-/* Reset default styles */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* Dark mode styles */
 body {
 	background-color: #292b2c;
 	color: #fff;
-	font-family: 'Open Sans', Arial, sans-serif; /* Use a stylish font */
+	font-family: 'Open Sans', Arial, sans-serif;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 /* Navbar styles */
 .navbar {
-	background-color: rgba(0, 0, 0, 0.3); /* More transparent background */
+	background-color: rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(10px);
-	padding: 15px 0; /* Increased padding */
+	padding: 15px 0;
 	transition: background-color 0.3s ease;
+	width: 95vw;
+	border-radius: 20px;
+	margin: 10px 0px;
 }
 
 .container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 30px; /* Increased padding */
+	padding: 0 30px;
 }
 
 .logo {
 	color: #ffcc29;
-	font-size: 28px; /* Larger font size */
+	font-size: 28px;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -49,14 +52,15 @@ body {
 .nav-links {
 	list-style: none;
 	display: flex;
-	gap: 30px; /* Increased gap */
+	gap: 30px;
 }
 
 .nav-links a {
 	color: #fff;
 	text-decoration: none;
-	font-size: 18px; /* Larger font size */
+	font-size: 20px; /* Larger font size */
 	transition: color 0.3s ease;
+	font-weight: 600;
 }
 
 .nav-links a:hover {
@@ -65,16 +69,16 @@ body {
 
 .user-links {
 	display: flex;
-	gap: 15px; /* Increased gap */
+	gap: 15px;
 }
 
 .login, .register {
 	color: #ffcc29;
 	text-decoration: none;
 	border: 1px solid #ffcc29;
-	padding: 8px 15px; /* Increased padding */
+	padding: 8px 15px;
 	border-radius: 5px;
-	font-size: 16px; /* Larger font size */
+	font-size: 16px;
 	transition: color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -102,14 +106,15 @@ body {
 		<div class="container">
 			<a href="#" class="logo">Job Portal</a>
 			<ul class="nav-links">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Post Job</a></li>
-				<li><a href="#">View Job</a></li>
+				<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+				<li><a href="#"><i class="fas fa-file-alt"></i> Post Job</a></li>
+				<li><a href="#"><i class="fas fa-eye"></i> View Job</a></li>
 			</ul>
 			<div class="user-links">
 				<a href="#" class="login">Log In</a> <a href="#" class="register">Register</a>
 			</div>
 		</div>
 	</nav>
+
 </body>
 </html>
