@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@include file="components/all_css.jsp"%>
+<%@include file="all_css.jsp"%>
 </head>
 
 <style>
@@ -35,14 +35,14 @@ body {
 	margin: 10px 0px;
 }
 
-.container {
+.container-nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 30px;
 }
 
-.logo {
+.logo-job {
 	color: #ffcc29;
 	font-size: 28px;
 	text-decoration: none;
@@ -72,7 +72,7 @@ body {
 	gap: 15px;
 }
 
-.login, .register {
+.login, .registerBtn {
 	color: #ffcc29;
 	text-decoration: none;
 	border: 1px solid #ffcc29;
@@ -82,7 +82,7 @@ body {
 	transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.login:hover, .register:hover {
+.login:hover, .registerBtn:hover {
 	color: #292b2c;
 	background-color: #ffcc29;
 }
@@ -103,15 +103,16 @@ body {
 
 <body>
 	<nav class="navbar">
-		<div class="container">
-			<a href="#" class="logo">Job Portal</a>
+		<div class="container-nav">
+			<a href="#" class="logo-job">Job Portal</a>
 			<ul class="nav-links">
-				<li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+				<li><a href="./index.jsp"><i class="fas fa-home"></i> Home</a></li>
 				<li><a href="#"><i class="fas fa-file-alt"></i> Post Job</a></li>
 				<li><a href="#"><i class="fas fa-eye"></i> View Job</a></li>
 			</ul>
 			<div class="user-links">
-				<a href="#" class="login">Log In</a> <a href="#" class="register">Register</a>
+				<a href="./login.jsp" class="login">Log In</a> 
+				<a href="./signup.jsp" class="registerBtn">Sign Up</a>
 			</div>
 		</div>
 	</nav>

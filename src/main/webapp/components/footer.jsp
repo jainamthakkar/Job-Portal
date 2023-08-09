@@ -4,19 +4,17 @@
 
 <style>
 
-.footer {
-	background-color: #1a1a2e;
-	color: #fff;
-	padding: 10px 0;
+
+.footer{
+	/* border: 2px solid red; */
+	position: absolute;
+	bottom: -250px;
 	width: 100vw;
-	border-radius: 20px;
-	position: relative;
-	bottom: 0;
-	top: 110vh;
-	height: auto;
+	height: 250px;
+	left: 0px;
 }
 
-.footer .container-footer {
+.container-footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -24,13 +22,14 @@
 	padding: 10px;
 	height: 100%;
 	width: 100%;
+	background-color: #1a1a2e;
 }
 
 .footer-content {
 	display: flex;
 	gap: 120px;
 	flex: 1;
-	height: 100%;
+	height: 70%;
 	width: 100%;
 	align-items: center;
 	justify-content: center; 
@@ -56,7 +55,7 @@
 }
 
 /* Copyright section */
-.footer .copyright {
+.copyright {
 	margin-top: 20px;
 	text-align: center;
 	font-size: 14px;
@@ -80,7 +79,7 @@
 			</div>
 		</div>
 		<div class="copyright">
-			<p>&copy; 2023 Job Portal. All rights reserved.</p>
+			<p>&copy; 2023 Job Portal. Design and developed with <span style="color: red"> ❤</span> by Jainam!</p>
 		</div>
 	</div>
 </footer>
