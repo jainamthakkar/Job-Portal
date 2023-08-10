@@ -107,7 +107,7 @@ body {
 			<a href="#" class="logo-job">Job Portal</a>
 			<ul class="nav-links">
 				<li><a href="./index.jsp"><i class="fas fa-home"></i> Home</a></li>
-				<li><a href="#"><i class="fas fa-file-alt"></i> Post Job</a></li>
+				<li><a href="./addJob.jsp"><i class="fas fa-file-alt"></i> Post Job</a></li>
 				<li><a href="#"><i class="fas fa-eye"></i> View Job</a></li>
 			</ul>
 			<div class="user-links">

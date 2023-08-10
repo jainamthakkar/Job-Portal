@@ -11,16 +11,14 @@
 	/* font-family: "Sansita Swashed", cursive; */
 	font-family: sans-serif;
 	 /*  border: 2px solid black; */  
+	 margin-top: 30px;
 }
 
 .center {
-	/* position: relative; */
 	padding: 50px 50px;
-	/* background: #ffffff; */
-	background-color: #333;
+	background-color: #262626;
 	border-radius: 10px;
-	width: 550px;
-	/* height: auto; */
+	width: 500px;
 	/* border: 2px solid black; */
 }
 
@@ -29,7 +27,7 @@
 	border-left: 5px solid dodgerblue;
 	padding: 10px;
 	color: #ffc107;
-	letter-spacing: 5px;
+	letter-spacing: 2px;
 	margin-bottom: 60px;
 	font-weight: bold;
 	padding-left: 10px;
@@ -62,7 +60,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	border: 2px solid gray;
+	border: none;
 	outline: none;
 	background: none;
 	padding: 10px;
@@ -96,6 +94,6 @@
     border-radius: 5px;
 }
 
-.center .inputbox .subButton:hover  {
+.subButton:hover  {
 	background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
