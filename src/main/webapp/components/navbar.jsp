@@ -108,7 +108,7 @@ body {
 			<ul class="nav-links">
 				<li><a href="./index.jsp"><i class="fas fa-home"></i> Home</a></li>
 				<li><a href="./addJob.jsp"><i class="fas fa-file-alt"></i> Post Job</a></li>
-				<li><a href="#"><i class="fas fa-eye"></i> View Job</a></li>
+				<li><a href="./viewJob.jsp"><i class="fas fa-eye"></i> View Job</a></li>
 			</ul>
 			<div class="user-links">
 				<a href="./login.jsp" class="login">Log In</a> 
