@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="com.DB.*"%>
+<%@page import="com.dao.*"%>
+<%@page import="com.entity.*"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,10 +112,15 @@ body {
 		<div class="container-nav">
 			<a href="#" class="logo-job">Job Portal</a>
 			<ul class="nav-links">
+
 				<li><a href="./index.jsp"><i class="fas fa-home"></i> Home</a></li>
-				<li><a href="./addJob.jsp"><i class="fas fa-file-alt"></i> Post Job</a></li>
-				<li><a href="./viewJob.jsp"><i class="fas fa-eye"></i> View Job</a></li>
+
+				<c:if test="${userobj.role eq 'admin'}">
+					<li><a href="./addJob.jsp"><i class="fas fa-file-alt"></i> Post Job</a></li>
+					<li><a href="./viewJob.jsp"><i class="fas fa-eye"></i> View Job</a></li>
+				</c:if>
 			</ul>
+			
 			<div class="user-links">
 				<a href="./login.jsp" class="login">Log In</a> 
 				<a href="./signup.jsp" class="registerBtn">Sign Up</a>

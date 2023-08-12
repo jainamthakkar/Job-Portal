@@ -17,6 +17,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 120vh;
+	align-items: center;
 }
 
 .background-image {
@@ -33,11 +34,22 @@ body {
 	display: block;
 }
 
-.welcome-text{
-	/* border: 2px solid black; */
-	text-align: center;
-	margin-top: 25px;
-	font-size: 38px;
+.welcome-text {
+    /* border: 2px solid black; */
+    font-family: cursive;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 38px;
+    padding: 15px;
+    margin-top: 60px;
+    border-radius: 20px;
+    color: #ffcc29;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    font-size: 2.6rem;
 }
 
 .quote-container {

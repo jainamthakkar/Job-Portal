@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>LogIn-Job Portal</title>
 <link rel="stylesheet" href="components/form.css">
 </head>
 
@@ -53,7 +53,7 @@ body {
 					<c:remove var="errorMsg"/>
 				</c:if> --%>
 
-				<form action="register" method="post">				
+				<form action="login" method="post">				
 
 					<div class="inputbox">
 						<label class="inputLable">Email</label><input type="text"
