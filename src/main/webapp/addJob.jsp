@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,9 +85,10 @@
 	background: linear-gradient(45deg, greenyellow, dodgerblue);
     }
 
-    .footer {
-      margin-top: 40px; 
-      top: 158vh;
+        .footer {
+      margin-top: 40px;
+      position: relative; 
+      /* top: 158vh; */
     }
   </style>
 </head>

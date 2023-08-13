@@ -7,8 +7,8 @@
 
 .footer{
 	/* border: 2px solid red; */
-	position: absolute;
-	bottom: -250px;
+	position: relative;
+	bottom: 0px;
 	width: 100vw;
 	height: 250px;
 	left: 0px;

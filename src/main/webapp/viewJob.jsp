@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
+<%@page import="com.DB.*"%>
+<%@page import="com.dao.*"%>
+<%@page import="com.entity.*"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +20,7 @@ body {
 	color: #fff;
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden; 
+	overflow-x: hidden;
 }
 
 .content {
@@ -21,16 +29,19 @@ body {
 	width: 80vw;
 }
 
-.headingText{
+.headingText {
 	margin-bottom: 15px;
 	margin-top: 0;
-	color: #ffc107; 
+	color: #ffc107;
+	text-align: center;
 }
+
 .job-details {
 	background-color: #262626;
 	padding: 40px;
 	border-radius: 10px;
 	box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+	margin-bottom: 30px;
 }
 
 .job-field {
@@ -46,6 +57,10 @@ body {
 .job-field span {
 	display: inline-block;
 	color: #d4d4d4;
+}
+
+.jobTitle {
+	color: #ffc107;
 }
 
 .buttons {
@@ -78,30 +93,52 @@ body {
 	<%@include file="components/navbar.jsp"%>
 
 	<div class="content">
+		<h1 class="headingText">Job Details</h1>
+
+		<%
+		JobDAO dao = new JobDAO(DBConnect.getConn());
+		List<Jobs> list = dao.getAllJobs();
+		for (Jobs j : list) { /*  here for each loop of jsp can be use  <c:forEach var="j" items="${list}"> content of job data </c:forEach>*/
+		%>
+
 		<div class="job-details">
-			<h2 class="headingText">Job Details</h2>
-			<div class="job-field">
-				<label>Title:</label> <span>Software Engineer</span>
+			<div class="jobTitle job-field">
+				<label>Title:</label> <span> <%=j.getTitle()%>
+				</span>
 			</div>
 			<div class="job-field">
-				<label>Location:</label> <span>New York</span>
+				<label>Location:</label> <span> <%=j.getLocation()%>
+				</span>
 			</div>
 			<div class="job-field">
-				<label>Category:</label> <span>Engineering</span>
+				<label>Category:</label> <span> <%=j.getCategory()%>
+				</span>
 			</div>
 			<div class="job-field">
-				<label>Status:</label> <span>Active</span>
+				<label>Status:</label> <span> <%=j.getStatus()%>
+				</span>
 			</div>
 			<div class="job-field">
-				<label>Description:</label> <span>Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit. Sed nec commodo urna. lorem Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit. Sed nec commodo urna. lorem</span>
+				<label>Description:</label> <span> <%=j.getDescription()%>
+				</span>
+			</div>
+			<div class="job-field">
+				<label>Publish-Date:</label> <span> <%=j.getPdate()%>
+				</span>
 			</div>
 			<div class="buttons">
-				<button class="edit">Edit</button>
-				<button class="delete">Delete</button>
+				<a href="edit.jsp?id=<%=j.getId()%>"><button class="edit">Edit</button></a>
+				<a>
+					<button class="delete">Delete</button>
+				</a>
 			</div>
+
 		</div>
+		<%
+		}
+		%>
+
+
 	</div>
 
 

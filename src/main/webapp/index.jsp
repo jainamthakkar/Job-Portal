@@ -21,8 +21,7 @@ body {
 }
 
 .index-main {
-	display: flex;
-	flex-direction: column;
+	display: block;
 	min-height: 120vh;
 }
 
@@ -57,19 +56,18 @@ body {
 
 <body>
 
-	<div class="index-main">
 		<%@include file="components/navbar.jsp"%>
+	<div class="index-main">
 
 		<%-- <%
 		Connection conn = DBConnect.getConn();
 		out.println(conn);
 		%> --%>
-
 		<div class="background-image">
 			<div class="quote-container"></div>
 		</div>
 
-		<%@ include file="components/footer.jsp"%>
 	</div>
+		<%@ include file="components/footer.jsp"%>
 </body>
 </html>
