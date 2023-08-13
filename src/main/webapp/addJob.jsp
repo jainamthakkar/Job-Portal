@@ -94,11 +94,22 @@
   <%@include file="components/navbar.jsp"%>
 
   <div class="content">
-    <form class="job-form" action="submit_job.jsp" method="post">
+    <form class="job-form" action="add_job" method="post">
     
     	<h1 class="jobHeading">Add a New Job Listing</h1>
+    	
+    		 <c:if test="${not empty succMsg }">
+					<p class="succTxt">${succMsg}</p>
+					<c:remove var="succMsg"/>
+				</c:if>
+				
+				<c:if test="${not empty errMsg }">
+					<p class="errorTxt">${errMsg}</p>
+					<c:remove var="errorMsg"/>
+				</c:if> 
+    	
       	<label for="jobTitle">Enter Title:</label>
-      	<input type="text" id="jobTitle" name="jobTitle" required>
+      	<input type="text" id="jobTitle" name="title" required>
 
       	<label for="location">Location:</label>
       	<select id="location" name="location" required>
@@ -124,9 +135,9 @@
       </select>
 
       	<label for="jobDescription">Enter Description:</label>
-      	<textarea id="jobDescription" name="jobDescription" rows="6" required></textarea>
+      	<textarea id="description" name="description" rows="6" required></textarea>
 
-      	<button type="submit" >Submit</button>
+      	<button type="submit"> Submit </button>
     </form>
   </div>
 

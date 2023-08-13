@@ -41,20 +41,6 @@
     /* border: 2px solid black; */
 }
 
-.succTxt{
-	text-align: center;
-	margin-bottom: 40px;
-	color: DodgerBlue;
-	font-size: 1.3rem;
-}
-
-.errorTxt{
-	text-align: center;
-	margin-bottom: 40px;
-	color: red;
-	font-size: 1.3rem;
-}
-
 .center .inputbox input {
 	position: absolute;
 	top: 0;

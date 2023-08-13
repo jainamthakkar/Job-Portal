@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
+<%@page import="com.DB.*"%>
+<%@page import="com.dao.*"%>
+<%@page import="com.entity.*"%>
+<%@page import="java.sql.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +20,7 @@ body {
 	overflow-x: hidden;
 }
 
-.index-main{
+.index-main {
 	display: flex;
 	flex-direction: column;
 	min-height: 120vh;
@@ -52,6 +59,11 @@ body {
 
 	<div class="index-main">
 		<%@include file="components/navbar.jsp"%>
+
+		<%-- <%
+		Connection conn = DBConnect.getConn();
+		out.println(conn);
+		%> --%>
 
 		<div class="background-image">
 			<div class="quote-container"></div>
