@@ -134,7 +134,7 @@ footer {
 			</div>
 			<div class="buttons">
 				<a href="edit.jsp?id=<%=j.getId()%>"><button class="edit">Edit</button></a>
-				<a>
+				<a href="delete?id=<%=j.getId()%>">
 					<button class="delete">Delete</button>
 				</a>
 			</div>
