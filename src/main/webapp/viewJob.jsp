@@ -21,12 +21,14 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
+	min-height: 120vh;
 }
 
 .content {
 	padding: 30px;
 	margin: 0 auto;
 	width: 80vw;
+	min-height: 85vh;
 }
 
 .headingText {
@@ -86,10 +88,15 @@ body {
 .buttons .delete:hover {
 	background-color: red;
 }
+
+footer {
+	position: relative;
+	bottom: 0px;
+}
 </style>
 </head>
 <body>
-	<!-- Include your navigation bar -->
+
 	<%@include file="components/navbar.jsp"%>
 
 	<div class="content">
@@ -98,9 +105,8 @@ body {
 		<%
 		JobDAO dao = new JobDAO(DBConnect.getConn());
 		List<Jobs> list = dao.getAllJobs();
-		for (Jobs j : list) { /*  here for each loop of jsp can be use  <c:forEach var="j" items="${list}"> content of job data </c:forEach>*/
+		for (Jobs j : list) {
 		%>
-
 		<div class="job-details">
 			<div class="jobTitle job-field">
 				<label>Title:</label> <span> <%=j.getTitle()%>
@@ -132,17 +138,13 @@ body {
 					<button class="delete">Delete</button>
 				</a>
 			</div>
-
 		</div>
 		<%
 		}
 		%>
 
-
 	</div>
 
-
-	<!-- Include your footer -->
 	<%@ include file="components/footer.jsp"%>
 </body>
 </html>

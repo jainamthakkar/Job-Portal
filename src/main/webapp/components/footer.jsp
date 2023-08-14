@@ -23,6 +23,7 @@
 	height: 100%;
 	width: 100%;
 	background-color: #1a1a2e;
+	bottom: 0px;
 }
 
 .footer-content {

@@ -110,17 +110,26 @@ body {
 			<a href="#" class="logo-job">Job Portal</a>
 			<ul class="nav-links">
 
-				<li><a href="./index.jsp"><i class="fas fa-home"></i> Home</a></li>
+				<c:choose>
+					<c:when test="${userobj.role eq 'admin'}">
+						<li><a href="./admin.jsp"><i class="fas fa-home"></i>
+								Home</a></li>
+						<li><a href="./addJob.jsp"><i class="fas fa-file-alt"></i>
+								Post Job</a></li>
+						<li><a href="./viewJob.jsp"><i class="fas fa-eye"></i>
+								View Job</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="./index.jsp"><i class="fas fa-home"></i>
+								Home</a></li>
+					</c:otherwise>
+				</c:choose>
 
-				<c:if test="${userobj.role eq 'admin'}">
-					<li><a href="./addJob.jsp"><i class="fas fa-file-alt"></i> Post Job</a></li>
-					<li><a href="./viewJob.jsp"><i class="fas fa-eye"></i> View Job</a></li>
-				</c:if>
 			</ul>
-			
+
 			<div class="user-links">
-				<a href="./login.jsp" class="login">Log In</a> 
-				<a href="./signup.jsp" class="registerBtn">Sign Up</a>
+				<a href="./login.jsp" class="login">Log In</a> <a
+					href="./signup.jsp" class="registerBtn">Sign Up</a>
 			</div>
 		</div>
 	</nav>

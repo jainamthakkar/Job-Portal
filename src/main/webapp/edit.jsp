@@ -108,21 +108,12 @@ body {
 			int id = Integer.parseInt(request.getParameter("id"));
 			JobDAO dao = new JobDAO(DBConnect.getConn());
 			Jobs j = dao.getJobById(id);
+			/* 			out.println(id); */
 			%>
 
-			<input type="hidden" value="<%=j.getId()%>">
+			<input type="hidden" name="id" value="<%=j.getId()%>">
 
 			<h1 class="jobHeading">Edit a Job Listing</h1>
-
-			<c:if test="${not empty succMsg }">
-				<p class="succTxt">${succMsg}</p>
-				<c:remove var="succMsg" />
-			</c:if>
-
-			<c:if test="${not empty errMsg }">
-				<p class="errorTxt">${errMsg}</p>
-				<c:remove var="errorMsg" />
-			</c:if>
 
 			<label for="jobTitle">Enter Title:</label> <input type="text"
 				id="jobTitle" name="title" value="<%=j.getTitle()%>" required>
@@ -135,22 +126,28 @@ body {
 				<option value="New York">New York</option>
 				<option value="Los Angeles">Los Angeles</option>
 				<option value="Chicago">Chicago</option>
-			</select> <label for="category">Category of Job:</label> <select id="category"
-				name="category" required>
-				<option value=" value="<%=j.getCategory()%>"><%=j.getCategory()%></option>
+			</select>
+			
+			<label for="category">Category of Job:</label> 
+			<select id="category" name="category" required>
+				<option value="<%=j.getCategory()%>"><%=j.getCategory()%></option>
 				<option value="Engineering">Engineering</option>
 				<option value="Sales">Sales</option>
 				<option value="Marketing">Marketing</option>
 				<option value="HR">HR</option>
-			</select> <label for="status">Status:</label> <select id="status"
-				name="status" required>
+			</select> 
+			
+			<label for="status">Status:</label> 
+			<select id="status" name="status" required>
 				<option value="<%=j.getStatus()%>"><%=j.getStatus()%></option>
 				<option value="Active">Active</option>
 				<option value="Inactive">Inactive</option>
-			</select> <label for="jobDescription">Enter Description:</label>
+			</select> 
+			
+			<label for="jobDescription">Enter Description:</label>
 			<textarea id="description" name="description" rows="6" required><%=j.getDescription()%></textarea>
 
-			<button type="submit">Submit</button>
+			<button>Submit</button>
 		</form>
 	</div>
 

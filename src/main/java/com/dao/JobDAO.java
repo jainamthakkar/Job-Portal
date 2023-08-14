@@ -77,16 +77,16 @@ public class JobDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				j = new Jobs();
-				j.setId(rs.getInt(1));
-				j.setTitle(rs.getString(2));
-				j.setDescription(rs.getString(3));
-				j.setCategory(rs.getString(4));
-				j.setStatus(rs.getString(5));
-				j.setLocation(rs.getString(6));
-				j.setPdate(rs.getTimestamp(7) + "");
-			}
+			if (rs.next()) {
+	            j = new Jobs();
+	            j.setId(rs.getInt(1));
+	            j.setTitle(rs.getString(2));
+	            j.setDescription(rs.getString(3));
+	            j.setCategory(rs.getString(4));
+	            j.setStatus(rs.getString(5));
+	            j.setLocation(rs.getString(6));
+	            j.setPdate(rs.getTimestamp(7) + "");
+	        }
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -69,15 +69,15 @@ body {
 
 <body>
 
-	<div class="index-main">
 		<%@include file="components/navbar.jsp"%>
+	<div class="index-main">
 
 		<div class="background-image">
 			<div class="quote-container"></div>
 		</div>
 			<h1 class="welcome-text">Welcome Admin!!</h1>
 
-		<%@ include file="components/footer.jsp"%>
 	</div>
+		<%@ include file="components/footer.jsp"%>
 </body>
 </html>

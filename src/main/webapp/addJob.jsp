@@ -85,9 +85,10 @@
 	background: linear-gradient(45deg, greenyellow, dodgerblue);
     }
 
-        .footer {
+    footer {
       margin-top: 40px;
-      position: relative; 
+      position: relative;
+      bottom: 0px; 
       /* top: 158vh; */
     }
   </style>
