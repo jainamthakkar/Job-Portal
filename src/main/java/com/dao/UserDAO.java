@@ -3,6 +3,8 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.entity.Jobs;
 import com.entity.User;
@@ -66,4 +68,5 @@ public class UserDAO {
 		
 		return u;
 	}
+	
 }

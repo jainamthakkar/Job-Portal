@@ -24,7 +24,7 @@ body {
 	min-height: 120vh;
 }
 
-.content {
+.contentMain {
 	padding: 30px;
 	margin: 0 auto;
 	width: 80vw;
@@ -65,30 +65,6 @@ body {
 	color: #ffc107;
 }
 
-.buttons {
-	margin-top: 20px;
-}
-
-.buttons button {
-	padding: 10px 20px;
-	margin-right: 10px;
-	background-color: #0056b0;
-	border: none;
-	border-radius: 5px;
-	color: #fff;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-	font-size: 16px;
-}
-
-.buttons .edit:hover {
-	background-color: blue;
-}
-
-.buttons .delete:hover {
-	background-color: red;
-}
-
 footer {
 	position: relative;
 	bottom: 0px;
@@ -97,21 +73,27 @@ footer {
 </head>
 <body>
 
+	<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp" />
+	</c:if>
+
 	<%@include file="components/navbar.jsp"%>
 
-	<div class="content">
-		<h1 class="headingText">Job Details</h1>
-
+	<div class="contentMain">
 		<%
 		JobDAO dao = new JobDAO(DBConnect.getConn());
-		List<Jobs> list = dao.getAllJobs();
+		List<Jobs> list = dao.getAllJobsForUser();
 		for (Jobs j : list) {
 		%>
+
+		<h1 class="headingText">Job Details</h1>
+
 		<div class="job-details">
 			<div class="jobTitle job-field">
 				<label>Title:</label> <span> <%=j.getTitle()%>
 				</span>
 			</div>
+
 			<div class="job-field">
 				<label>Location:</label> <span> <%=j.getLocation()%>
 				</span>
@@ -125,19 +107,13 @@ footer {
 				</span>
 			</div>
 			<div class="job-field">
-				<label>Description:</label> <span> <%=j.getDescription()%>
-				</span>
+				<label>Description:</label> <span> <%=j.getDescription()%></span>
 			</div>
 			<div class="job-field">
 				<label>Publish-Date:</label> <span> <%=j.getPdate()%>
 				</span>
 			</div>
-			<div class="buttons">
-				<a href="edit.jsp?id=<%=j.getId()%>"><button class="edit">Edit</button></a>
-				<a href="delete?id=<%=j.getId()%>">
-					<button class="delete">Delete</button>
-				</a>
-			</div>
+
 		</div>
 		<%
 		}

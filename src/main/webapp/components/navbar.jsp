@@ -129,14 +129,14 @@ body {
 
 			<div class="user-links">
 
-				<c:if test="${not empty userobj }">
+				<c:if test="${userobj.role eq 'admin'}">
 					<a href="#" class="login"> Admin </a> 
-					<a href="#" class="registerBtn"> LogOut </a>
+					<a href="logout" class="registerBtn"> LogOut </a>
 				</c:if>
 
-				<c:if test="${empty userobj }">
-					<a href="./login.jsp" class="login"> LogIn </a> 
-					<a href="./signup.jsp" class="registerBtn"> SignUp </a>
+				<c:if test="${userobj.role eq 'user'}">
+					<a href="#" class="login"> ${userobj.name } </a> 
+					<a href="logout" class="registerBtn"> LogOut </a>
 				</c:if>
 			</div>
 		</div>

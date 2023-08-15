@@ -62,6 +62,11 @@ body {
 					<p class="succTxt">${succMsg}</p>
 					<c:remove var="succMsg"/>
 				</c:if>
+				
+				<c:if test="${empty succMsg }">
+					<p class="errorTxt">${succMsg}</p>
+					<c:remove var="succMsg"/>
+				</c:if>
 
 				<form action="login" method="post">				
 

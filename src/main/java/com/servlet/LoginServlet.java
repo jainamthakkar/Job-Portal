@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 				
 				if(user != null) {
 					session.setAttribute("userobj", user);
-					resp.sendRedirect("home_user.jsp");
+					resp.sendRedirect("viewJob_user.jsp");
 				}else {
 					session.setAttribute("succMsg", "Invalid Email or Password");
 					resp.sendRedirect("login.jsp");
