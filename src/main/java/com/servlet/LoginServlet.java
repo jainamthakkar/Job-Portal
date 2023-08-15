@@ -2,7 +2,9 @@ package com.servlet;
 
 import java.io.IOException;
 
+import com.DB.DBConnect;
 import com.entity.User;
+import com.dao.*;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -27,6 +29,16 @@ public class LoginServlet extends HttpServlet {
 				resp.sendRedirect("admin.jsp");
 			}else {
 				
+				UserDAO dao = new UserDAO(DBConnect.getConn());
+				User user = dao.login(em, ps);
+				
+				if(user != null) {
+					session.setAttribute("userobj", user);
+					resp.sendRedirect("home_user.jsp");
+				}else {
+					session.setAttribute("succMsg", "Invalid Email or Password");
+					resp.sendRedirect("login.jsp");
+				}
 			}
 
 		} catch (Exception e) {

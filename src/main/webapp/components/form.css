@@ -69,7 +69,7 @@
 	color: white;
 } 
 
-.center .inputbox .subButton {
+.center .inputbox .submitButton {
 	width: 35%;
 	background: dodgerblue;
 	color: #fff;
@@ -80,6 +80,7 @@
     border-radius: 5px;
 }
 
-.subButton:hover  {
+.submitButton:hover{
 	background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
+

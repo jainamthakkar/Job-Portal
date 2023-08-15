@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +29,21 @@ body {
 	margin-bottom: 20px;
 	overflow: hidden;
 }
+
+.succTxt{
+	text-align: center;
+	margin-bottom: 40px;
+	color: DodgerBlue;
+	font-size: 1.3rem;
+}
+
+.errorTxt{
+	text-align: center;
+	margin-bottom: 40px;
+	color: red;
+	font-size: 1.3rem;
+}
+
 </style>
 
 <body>
@@ -40,15 +57,10 @@ body {
 
 				<h1>Sign Up</h1>
 
-				<%-- <c:if test="${not empty succMsg }">
+				<c:if test="${not empty succMsg }">
 					<p class="succTxt">${succMsg}</p>
-					<c:remove var="succMsg"/>
+					<c:remove var="succMsg" />
 				</c:if>
-				
-				<c:if test="${not empty errorMsg }">
-					<p class="errorTxt">${errorMsg}</p>
-					<c:remove var="errorMsg"/>
-				</c:if> --%>
 
 				<form action="register" method="post">
 
@@ -56,12 +68,12 @@ body {
 						<label class="inputLable">Full Name</label><input type="text"
 							name="fullName" required="required">
 					</div>
-					
+
 					<div class="inputbox">
 						<label class="inputLable">Qualification</label><input type="text"
 							name="qualification" required="required">
 					</div>
-					
+
 					<div class="inputbox">
 						<label class="inputLable">Email</label><input type="text"
 							name="email" required="required">
@@ -71,7 +83,7 @@ body {
 							name="password" required="required">
 					</div>
 					<div class="inputbox">
-						<button type="submit" class="subButton">Submit</button>
+						<button type="submit" class="submitButton">Submit</button>
 					</div>
 				</form>
 			</div>

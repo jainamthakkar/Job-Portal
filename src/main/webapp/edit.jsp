@@ -98,6 +98,10 @@ body {
 </head>
 <body>
 
+	<c:if test="${userobj.role ne 'admin' }">
+		<c:redirect url="login.jsp"></c:redirect>
+	</c:if>
+
 	<%@include file="components/navbar.jsp"%>
 
 	<div class="content">
@@ -126,25 +130,19 @@ body {
 				<option value="New York">New York</option>
 				<option value="Los Angeles">Los Angeles</option>
 				<option value="Chicago">Chicago</option>
-			</select>
-			
-			<label for="category">Category of Job:</label> 
-			<select id="category" name="category" required>
+			</select> <label for="category">Category of Job:</label> <select id="category"
+				name="category" required>
 				<option value="<%=j.getCategory()%>"><%=j.getCategory()%></option>
 				<option value="Engineering">Engineering</option>
 				<option value="Sales">Sales</option>
 				<option value="Marketing">Marketing</option>
 				<option value="HR">HR</option>
-			</select> 
-			
-			<label for="status">Status:</label> 
-			<select id="status" name="status" required>
+			</select> <label for="status">Status:</label> <select id="status"
+				name="status" required>
 				<option value="<%=j.getStatus()%>"><%=j.getStatus()%></option>
 				<option value="Active">Active</option>
 				<option value="Inactive">Inactive</option>
-			</select> 
-			
-			<label for="jobDescription">Enter Description:</label>
+			</select> <label for="jobDescription">Enter Description:</label>
 			<textarea id="description" name="description" rows="6" required><%=j.getDescription()%></textarea>
 
 			<button>Submit</button>

@@ -30,6 +30,21 @@ body {
 	margin-bottom: 20px;
 	overflow: hidden;
 }
+
+.succTxt{
+	text-align: center;
+	margin-bottom: 40px;
+	color: DodgerBlue;
+	font-size: 1.3rem;
+}
+
+.errorTxt{
+	text-align: center;
+	margin-bottom: 40px;
+	color: red;
+	font-size: 1.3rem;
+}
+
 </style>
 
 <body>
@@ -43,15 +58,10 @@ body {
 		
 				<h1>LogIn</h1>
 				
-				<%-- <c:if test="${not empty succMsg }">
+				<c:if test="${not empty succMsg }">
 					<p class="succTxt">${succMsg}</p>
 					<c:remove var="succMsg"/>
 				</c:if>
-				
-				<c:if test="${not empty errorMsg }">
-					<p class="errorTxt">${errorMsg}</p>
-					<c:remove var="errorMsg"/>
-				</c:if> --%>
 
 				<form action="login" method="post">				
 
@@ -64,7 +74,7 @@ body {
 							name="password" required="required">
 					</div>
 					<div class="inputbox">
-						<button type="submit" class="subButton">Submit</button>
+						<button type="submit" class="submitButton">Submit</button>
 					</div>
 				</form>
 			</div>

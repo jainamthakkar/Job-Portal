@@ -128,8 +128,16 @@ body {
 			</ul>
 
 			<div class="user-links">
-				<a href="./login.jsp" class="login">Log In</a> <a
-					href="./signup.jsp" class="registerBtn">Sign Up</a>
+
+				<c:if test="${not empty userobj }">
+					<a href="#" class="login"> Admin </a> 
+					<a href="#" class="registerBtn"> LogOut </a>
+				</c:if>
+
+				<c:if test="${empty userobj }">
+					<a href="./login.jsp" class="login"> LogIn </a> 
+					<a href="./signup.jsp" class="registerBtn"> SignUp </a>
+				</c:if>
 			</div>
 		</div>
 	</nav>
