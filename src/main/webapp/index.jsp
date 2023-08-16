@@ -12,7 +12,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Home-Job Portal</title>
-<%@include file="components/all_css.jsp"%>
 </head>
 
 <style>
@@ -56,7 +55,7 @@ body {
 
 <body>
 
-		<%@include file="components/navbar.jsp"%>
+	<%@include file="components/navbar.jsp"%>
 	<div class="index-main">
 
 		<%-- <%
@@ -68,6 +67,6 @@ body {
 		</div>
 
 	</div>
-		<%@ include file="components/footer.jsp"%>
+	<%@ include file="components/footer.jsp"%>
 </body>
 </html>

@@ -1,0 +1,30 @@
+/* 
+
+.modal-btn.active{
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
+
+.modal_container{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgb(0, 0, 0.3);
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.modal_container.active{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+ */

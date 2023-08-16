@@ -3,13 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <%@include file="all_css.jsp"%>
-</head>
 
 <style>
 * {
@@ -90,6 +84,33 @@ body {
 	background-color: #ffcc29;
 }
 
+.modal-btn.active {
+	filter: blur(20px);
+	pointer-events: none;
+	user-select: none;
+}
+
+.modal_container {
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	padding: 50px;
+	box-shadow: 0 5px 30px rgb(0, 0, 0.3);
+	background: #fff;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.modal_container.active {
+	top: 50%;
+	visibility: visible;
+	opacity: 1;
+	transition: 0.5s;
+}
+
 /* Responsive styles */
 @media ( max-width : 768px) {
 	.container {
@@ -104,43 +125,62 @@ body {
 }
 </style>
 
-<body>
-	<nav class="navbar">
-		<div class="container-nav">
-			<a href="#" class="logo-job">Job Portal</a>
-			<ul class="nav-links">
+<nav class="navbar">
+	<div class="container-nav">
+		<a href="#" class="logo-job">Job Portal</a>
+		<ul class="nav-links">
 
-				<c:choose>
-					<c:when test="${userobj.role eq 'admin'}">
-						<li><a href="./admin.jsp"><i class="fas fa-home"></i>
-								Home</a></li>
-						<li><a href="./addJob.jsp"><i class="fas fa-file-alt"></i>
-								Post Job</a></li>
-						<li><a href="./viewJob.jsp"><i class="fas fa-eye"></i>
-								View Job</a></li>
-					</c:when>
-					<c:otherwise>
-						<li><a href="./index.jsp"><i class="fas fa-home"></i>
-								Home</a></li>
-					</c:otherwise>
-				</c:choose>
+			<c:choose>
+				<c:when test="${userobj.role eq 'admin'}">
+					<li><a href="./admin.jsp"><i class="fas fa-home"></i> Home</a></li>
+					<li><a href="./addJob.jsp"><i class="fas fa-file-alt"></i>
+							Post Job</a></li>
+					<li><a href="./viewJob.jsp"><i class="fas fa-eye"></i>
+							View Job</a></li>
+				</c:when>
 
-			</ul>
+				<c:when test="${userobj.role eq 'user'}">
+					<li><a href="./index.jsp"><i class="fas fa-home"></i> Home</a></li>
+					<li><a href="./viewJob_user.jsp"><i class="fas fa-eye"></i>
+							View Job</a></li>
+				</c:when>
 
-			<div class="user-links">
+				<c:otherwise>
+					<li><a href="./index.jsp"><i class="fas fa-home"></i> Home</a></li>
+				</c:otherwise>
+			</c:choose>
 
-				<c:if test="${userobj.role eq 'admin'}">
-					<a href="#" class="login"> Admin </a> 
-					<a href="logout" class="registerBtn"> LogOut </a>
-				</c:if>
+		</ul>
 
-				<c:if test="${userobj.role eq 'user'}">
-					<a href="#" class="login"> ${userobj.name } </a> 
-					<a href="logout" class="registerBtn"> LogOut </a>
-				</c:if>
-			</div>
+		<div class="user-links">
+
+			<c:if test="${userobj.role eq 'admin'}">
+				<a href="#" class="login"> Admin </a>
+				<a href="logout" class="registerBtn"> LogOut </a>
+			</c:if>
+
+			<c:if test="${userobj.role eq 'user'}">
+				<a href="#" class="modal-btn login">
+					<div id="myBtn" onclick="toggle()">${userobj.name }</div>
+				</a>
+				<a href="logout" class="registerBtn"> LogOut </a>
+			</c:if>
+
+			<c:if test="${empty userobj.role}">
+				<a href="./login.jsp" class="login"> LogIn </a>
+				<a href="./signup.jsp" class="registerBtn"> SignUp </a>
+			</c:if>
 		</div>
-	</nav>
+	</div>
+</nav>
 
-</body>
-</html>
+<!-- <div class="modal-btn">
+		<button onclick="toggle()">jainam</button>
+	</div> -->
+
+<!-- <div class="modal_container">
+		<h1>Yor Name</h1>
+		<button class="btn" type="submit" onclick="toggle()">Close</button>
+	</div> -->
+
+ <script type="text/javascript" src="components/modal.js" /> 

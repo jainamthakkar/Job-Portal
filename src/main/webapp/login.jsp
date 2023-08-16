@@ -59,11 +59,6 @@ body {
 				<h1>LogIn</h1>
 				
 				<c:if test="${not empty succMsg }">
-					<p class="succTxt">${succMsg}</p>
-					<c:remove var="succMsg"/>
-				</c:if>
-				
-				<c:if test="${empty succMsg }">
 					<p class="errorTxt">${succMsg}</p>
 					<c:remove var="succMsg"/>
 				</c:if>
