@@ -80,7 +80,7 @@
     border-radius: 5px;
 }
 
-.submitButton:hover{
+.center .inputbox .submitButton:hover{
 	background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
 

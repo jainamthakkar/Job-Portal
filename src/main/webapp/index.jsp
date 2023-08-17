@@ -56,7 +56,7 @@ body {
 <body>
 
 	<%@include file="components/navbar.jsp"%>
-	<div class="index-main">
+	<div class="index-main blur-background">
 
 		<%-- <%
 		Connection conn = DBConnect.getConn();

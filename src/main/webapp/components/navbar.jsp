@@ -5,11 +5,19 @@
 
 <%@include file="all_css.jsp"%>
 
+
+
 <style>
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+a {
+	font-style: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 body {
@@ -84,33 +92,6 @@ body {
 	background-color: #ffcc29;
 }
 
-.modal-btn.active {
-	filter: blur(20px);
-	pointer-events: none;
-	user-select: none;
-}
-
-.modal_container {
-	position: fixed;
-	top: 30%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 600px;
-	padding: 50px;
-	box-shadow: 0 5px 30px rgb(0, 0, 0.3);
-	background: #fff;
-	visibility: hidden;
-	opacity: 0;
-	transition: 0.5s;
-}
-
-.modal_container.active {
-	top: 50%;
-	visibility: visible;
-	opacity: 1;
-	transition: 0.5s;
-}
-
 /* Responsive styles */
 @media ( max-width : 768px) {
 	.container {
@@ -123,6 +104,78 @@ body {
 		margin-top: 10px;
 	}
 }
+
+/* modal css */
+.modal_container {
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transform: translate(-50%, -50%);
+	width: 550px;
+	height: 300px;
+	padding: 50px;
+	box-shadow: 0 5px 30px rgb(0, 0, 0.3);
+	background: #181818;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+	color: aliceblue;
+	border-radius: 20px;
+}
+
+.modal_container.active {
+	top: 50%;
+	visibility: visible;
+	opacity: 1;
+	transition: 0.5s;
+	z-index: 5;
+}
+
+.modal_container h1 {
+	color: #ffc107;
+	margin-bottom: 20px;
+}
+
+.modal_container.active {
+	top: 50%;
+	visibility: visible;
+	opacity: 1;
+	transition: 0.5s;
+}
+
+.profile-fields {
+	margin-bottom: 15px;
+}
+
+.profile-fields label {
+	display: inline-block;
+	width: 120px;
+	font-weight: bold;
+}
+
+.profile-fields span {
+	display: inline-block;
+	color: #d4d4d4;
+}
+
+.modal_container .btn {
+	display: inline;
+	padding: 10px 20px;
+	font-weight: 500;
+	border: 1px solid #ffc107;
+	border-radius: 5px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.modal_container .btn:hover {
+	background-color: #ffc107;
+	color: #181818;
+}
+
 </style>
 
 <nav class="navbar">
@@ -178,9 +231,31 @@ body {
 		<button onclick="toggle()">jainam</button>
 	</div> -->
 
-<!-- <div class="modal_container">
-		<h1>Yor Name</h1>
-		<button class="btn" type="submit" onclick="toggle()">Close</button>
-	</div> -->
+<div class="modal_container">
 
- <script type="text/javascript" src="components/modal.js" /> 
+	<h1>Your Profile</h1>
+	<div>
+		<div class="profile-fields">
+			<label>Name:</label> <span> ${userobj.name } </span>
+		</div>
+
+		<div class="profile-fields">
+			<label>Qualification:</label> <span>${userobj.qualification }
+			</span>
+		</div>
+
+		<div class="profile-fields">
+			<label>E-mail:</label> <span> ${userobj.email } </span>
+		</div>
+
+	</div>
+
+	<div class="modal_but">
+		<div class="btn" type="submit" onclick="toggle()">Close</div>
+		<a href="./edit_profile.jsp">
+			<div class="btn">Edit</div>
+		</a>
+	</div>
+</div>
+
+<script type="text/javascript" src="components/modal.js"></script>
